@@ -1,3 +1,7 @@
+### Parvej Chowdhury (parvej35@gmail.com)
+
+We are going to do the basics of GraphQL using Laravel. These are the fundamentals of GraphQL and essential trainings.
+
 ## Step to create the project:
 
 #### 1) Install composer in your system from :
