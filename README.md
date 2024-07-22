@@ -52,7 +52,7 @@ This is a tool like postman for developing REST APIs. After installation, visit 
    - This command will create the 'Greetings' class in the 'app/GraphQL/Query' folder.<br><br>
 
 ## Defining the type of the schema / object
-=> Open the '<b>graphql.schema</b>' file and write the schema definition like this:
+=> Open the '<b>graphql.schema</b>' file and write the schema definition as below:
 
     type User {
         id: ID
@@ -63,11 +63,27 @@ This is a tool like postman for developing REST APIs. After installation, visit 
         updated_at: String
     }
 
-<b>Note:</b> The '<b>!</b>' sign means that the field is required.
+<b>Note:</b> The '<b>!</b>' sign means that the field is required while creating the object.
 
-=> Browse the URL 'http://127.0.0.1:8000/graphiql' and write the query to <b>fetch the desired the data.</b>
+## Fetch the data from the database using GraphQL: 
+
+=> Open the <b>schema.graphql</b> file and write the below <b>Query</b> type:
+
+    type Query {
+        users: [User!] @all
+        user(id: ID! @eq): User @find
+        paginate_users: [User!] @paginate
+    }
+
+=> Browse the URL 'http://127.0.0.1:8000/graphiql' and write the query:<br>
 
     {
+        users {
+            id
+            name
+            email
+        }
+
         #get the all users
         users {
             id
@@ -111,9 +127,21 @@ This is a tool like postman for developing REST APIs. After installation, visit 
     }
 
 
+## Create, Update and Delete data using GraphQL: Mutation
+
+=> Open the <b>schema.graphql</b> file and write the below <b>Mutation</b> type:
+
+    type Mutation {
+        createUser(name: String!, email: String!): User! @create
+        updateUser(id: ID!, name: String, email: String): User @update
+        deleteUser(id: ID!): User @delete
+    }
+
+=> Browse the URL 'http://127.0.0.1:8000/graphiql' and write the query:<br>
+
 ### Important links:
-<a href='https://www.youtube.com/watch?v=pNC_lz4gBio' target='_blank'>https://www.youtube.com/watch?v=pNC_lz4gBio </a>
+<a href='https://www.youtube.com/watch?v=pNC_lz4gBio' target='_blank'>https://www.youtube.com </a>
 <br>
-<a href='https://www.youtube.com/watch?v=_Zss2Mbz4Bs' target='_blank'>https://www.youtube.com/watch?v=_Zss2Mbz4Bs </a>
+<a href='https://www.youtube.com/watch?v=_Zss2Mbz4Bs' target='_blank'>https://www.youtube.com </a>
 <br>
 <a href='https://lighthouse-php.com/' target='_blank'>https://lighthouse-php.com/ </a>
