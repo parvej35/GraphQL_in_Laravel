@@ -138,10 +138,3 @@ This is a tool like postman for developing REST APIs. After installation, visit 
     }
 
 => Browse the URL 'http://127.0.0.1:8000/graphiql' and write the query:<br>
-
-### Important links:
-<a href='https://www.youtube.com/watch?v=pNC_lz4gBio' target='_blank'>https://www.youtube.com </a>
-<br>
-<a href='https://www.youtube.com/watch?v=_Zss2Mbz4Bs' target='_blank'>https://www.youtube.com </a>
-<br>
-<a href='https://lighthouse-php.com/' target='_blank'>https://lighthouse-php.com/ </a>
